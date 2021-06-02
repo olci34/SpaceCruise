@@ -17,14 +17,16 @@ ActiveRecord::Schema.define(version: 2021_06_02_164024) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.string "departure"
-    t.string "arrival"
-    t.string "destination"
-    t.string "from"
+    t.string "passcode"
     t.integer "trip_id"
+    t.index ["trip_id"], name: "index_tickets_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
+    t.string "departure"
+    t.string "arrival"
+    t.string "destination"
+    t.string "takeoff"
     t.integer "user_id"
   end
 

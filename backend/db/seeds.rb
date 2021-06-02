@@ -1,0 +1,5 @@
+user = User.create(username: 'olci', password: '123123')
+planet = Planet.create(name:'Earth')
+planet2 = Planet.create(name:'Mars')
+trip = user.trips.create(departure: '20 Oct 2022', arrival: '28 Oct 2022', destination: planet2.name, takeoff: planet.name)
+ticket = trip.create_ticket(passcode: '111')

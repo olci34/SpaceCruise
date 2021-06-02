@@ -1,10 +1,13 @@
-import './App.css';
-import NavBar from './NavBar.js'
+import "./App.css";
+import Greeting from './Greeting'
+import UserForm from './UserForm'
+
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-    </div>
+    <>
+      <Greeting />
+      <UserForm />
+    </>
   );
 }
 

@@ -1,12 +1,21 @@
 import "./App.css";
-import Greeting from './Greeting'
-import UserForm from './UserForm'
+import Greeting from "./Greeting";
+import UserForm from "./UserForm";
+import { Route, Switch } from "react-router-dom";
+import Planets from "./Planets";
 
-function App() {
+function App(props) {
   return (
     <>
-      <Greeting />
-      <UserForm />
+      <Switch>
+        <Route exact path="/">
+          <Greeting />
+          <UserForm />
+        </Route>
+        <Route exact path="/planets">
+          <Planets />
+        </Route>
+      </Switch>
     </>
   );
 }

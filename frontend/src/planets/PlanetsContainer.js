@@ -1,13 +1,12 @@
 import { connect } from "react-redux";
 import fetchPlanets from "../actions/fetchPlanets";
 import React, { Component } from "react";
-import Planets from './Planets'
+import Planets from "./Planets";
 
 class PlanetsContainer extends Component {
-    
-    componentDidMount() {
-        this.props.fetchPlanets()
-    }
+  componentDidMount() {
+    this.props.fetchPlanets();
+  }
 
   render() {
     return (
@@ -18,4 +17,4 @@ class PlanetsContainer extends Component {
   }
 }
 
-export default connect(null, {fetchPlanets})(PlanetsContainer);
+export default connect(null, { fetchPlanets })(PlanetsContainer);

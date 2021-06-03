@@ -19,7 +19,7 @@ class UserForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.addUser(this.state)
-        this.props.history.push('/planets') // navigates us to /planets
+        this.props.history.push('/trips') // navigates us to /planets
     }
 
     render() {

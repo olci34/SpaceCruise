@@ -1,8 +1,8 @@
 import "./App.css";
 import Greeting from "./Greeting";
-import UserForm from "./UserForm";
+import UserForm from "./users/UserForm";
 import { Route, Switch } from "react-router-dom";
-import Planets from "./Planets";
+import PlanetsContainer from "./planets/PlanetsContainer";
 
 function App(props) {
   return (
@@ -13,7 +13,7 @@ function App(props) {
           <UserForm />
         </Route>
         <Route exact path="/planets">
-          <Planets />
+          <PlanetsContainer />
         </Route>
       </Switch>
     </>

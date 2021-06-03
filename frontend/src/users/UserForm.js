@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import addUser from './actions/addUser'
+import addUser from '../actions/addUser'
 import {withRouter} from 'react-router-dom'
 
 class UserForm extends Component {

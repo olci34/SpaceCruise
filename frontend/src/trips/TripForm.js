@@ -22,6 +22,9 @@ class TripForm extends Component {
     e.preventDefault();
     const visitingPlanetIds = this.state.planets.filter(p => p.checked === true).map(p => p.id)
     this.props.postTrip({departure: '10 Jan 2023', user_id: 1, planet_ids: visitingPlanetIds})
+    const unchecked = this.state.planets
+    unchecked.map(p => p.checked = false)
+    this.setState({planets: unchecked})
   };
 
   handleChange = (e) => {
@@ -33,6 +36,7 @@ class TripForm extends Component {
   };
 
   render() {
+    console.log('render')
     return (
       <form onSubmit={this.handleSubmit}>
         {this.state.planets.map((p) => (

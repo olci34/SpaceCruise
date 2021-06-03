@@ -1,32 +1,37 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Form, Button } from "react-bootstrap";
 class TripForm extends Component {
+
+    state = {
+        earth: false,
+        mars: false
+    }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("post trip");
+    console.log(this.state);
   };
 
   handleChange = (e) => {
-    debugger;
-  };
+      this.setState(prevState => ({...prevState, [e.target.name]: !prevState[e.target.name]}))
+  }
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <div key={`default-checkbox`} className="mb-3">
-            {this.props.planets.map((p,i) => { return (
-          <Form.Check
-            key={i}
-            onChange={this.handleChange}
-            type="checkbox"
-            id={p.name}
-            label={p.name}
-          />
-            )})}
-        </div>
-        <Button type="submit">Let's Go!</Button>
-      </Form>
+      <form onSubmit={this.handleSubmit}>
+          {Object.keys(this.state).map(key => (
+              <label key={key}>
+                  {key}
+                <input
+                  type='checkbox'
+                  onChange={this.handleChange}
+                  key={key}
+                  name={key}
+                  checked={this.state[key]}/>
+            </label>
+          ))}
+          <input type='submit' value="Let's Go!" />
+      </form>
     );
   }
 }

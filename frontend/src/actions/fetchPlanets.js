@@ -1,4 +1,4 @@
-export default function fetchPlanets(dispatch) {
+export default function fetchPlanets() {
   return (dispatch) => {
     fetch("http://localhost:3001/planets")
       .then((resp) => resp.json())

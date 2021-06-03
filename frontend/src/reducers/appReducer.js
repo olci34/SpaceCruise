@@ -6,6 +6,8 @@ export default function appReducer(state, action) {
       return { ...state, planets: action.payload };
     case "FETCH_TRIPS":
       return { ...state, trips: action.payload };
+    case "POST_TRIP":
+      return {...state, trips: [...state.trips, action.payload]}
     default:
       return state;
   }

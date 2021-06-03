@@ -20,8 +20,8 @@ class TripForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    debugger
-    this.props.postTrip()
+    const visitingPlanetIds = this.state.planets.filter(p => p.checked === true).map(p => p.id)
+    this.props.postTrip({departure: '10 Jan 2023', user_id: 1, planet_ids: visitingPlanetIds})
   };
 
   handleChange = (e) => {

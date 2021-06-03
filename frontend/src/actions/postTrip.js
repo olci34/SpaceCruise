@@ -1,4 +1,4 @@
-export default function postTrip(trip) {
+export default function postTrip(itenary) {
     return (dispatch) => {
         const configTrip = {
             headers: {
@@ -6,10 +6,10 @@ export default function postTrip(trip) {
                 'Accept': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify({trip: {destination: 'Mars', takeoff: 'Earth', arrival: 'ocak 4', departure: 'december 2', user_id:1}})
+            body: JSON.stringify({trip: itenary})
         }
         fetch('http://localhost:3001/trips', configTrip)
             .then(resp => resp.json())
-            .then(trip => {debugger})
+            .then(trip => {dispatch({type: 'POST_TRIP', payload: trip})})
     }
 }

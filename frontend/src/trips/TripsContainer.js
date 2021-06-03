@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import fetchTrips from "../actions/fetchTrips";
+import TripForm from "./TripForm";
 import Trips from "./Trips";
 
 class TripsContainer extends Component {
@@ -12,6 +13,7 @@ class TripsContainer extends Component {
     return (
       <>
         <Trips />
+        <TripForm planets={[{name: 'earth'}, {name:'mars'}]} />
       </>
     );
   }

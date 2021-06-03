@@ -4,7 +4,7 @@ function Trips(props) {
 
     return (
         <ul>
-            {props.trips.map(t => <li><h2>{t.takeoff} - {t.destination}</h2></li>)}
+            {props.trips.map((t,i) => <li key={i}><h2>{t.takeoff} - {t.destination}</h2></li>)}
         </ul>
     )
 }

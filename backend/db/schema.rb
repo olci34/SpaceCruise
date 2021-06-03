@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 2021_06_02_164024) do
     t.string "name"
   end
 
+  create_table "planets_trips", force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "planet_id"
+    t.index ["planet_id"], name: "index_planets_trips_on_planet_id"
+    t.index ["trip_id"], name: "index_planets_trips_on_trip_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.string "passcode"
     t.integer "trip_id"
@@ -24,17 +31,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_164024) do
 
   create_table "trips", force: :cascade do |t|
     t.string "departure"
-    t.string "arrival"
-    t.string "destination"
-    t.string "takeoff"
     t.integer "user_id"
-  end
-
-  create_table "trips_planets", force: :cascade do |t|
-    t.integer "trip_id"
-    t.integer "planet_id"
-    t.index ["planet_id"], name: "index_trips_planets_on_planet_id"
-    t.index ["trip_id"], name: "index_trips_planets_on_trip_id"
   end
 
   create_table "users", force: :cascade do |t|

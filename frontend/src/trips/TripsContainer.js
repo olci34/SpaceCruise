@@ -6,6 +6,7 @@ import Trips from "./Trips";
 import fetchPlanets from '../actions/fetchPlanets'
 
 class TripsContainer extends Component {
+
   componentDidMount() {
     this.props.fetchTrips();
     this.props.fetchPlanets()
@@ -21,4 +22,4 @@ class TripsContainer extends Component {
   }
 }
 
-export default connect(null, { fetchTrips,fetchPlanets })(TripsContainer);
+export default connect(null, {fetchTrips, fetchPlanets})(TripsContainer);

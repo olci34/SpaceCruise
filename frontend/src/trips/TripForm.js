@@ -1,33 +1,41 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-class TripForm extends Component {
 
-    state = {
-        earth: false,
-        mars: false
+class TripForm extends Component {
+ 
+        state = {
+            planets: []
+        }
+    componentDidUpdate(prevProps) {
+        console.log('didupdate')
+        if(prevProps.planets.length === 0) {
+            this.setState({planets: this.props.planets.map(p => Object.assign({},p,{checked: false}))})
+        }
     }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state.planets);
   };
 
   handleChange = (e) => {
-      this.setState(prevState => ({...prevState, [e.target.name]: !prevState[e.target.name]}))
+      let newPlanets = this.state.planets
+      newPlanets.map(p => p.name === e.target.name ? p.checked = e.target.checked : p)
+      this.setState({planets: newPlanets})
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-          {Object.keys(this.state).map(key => (
-              <label key={key}>
-                  {key}
+          {this.state.planets.map(p => (
+              <label key={p.id}>
+                  {p.name}
                 <input
                   type='checkbox'
                   onChange={this.handleChange}
-                  key={key}
-                  name={key}
-                  checked={this.state[key]}/>
+                  key={p.name}
+                  name={p.name}
+                  checked={p.checked}/>
             </label>
           ))}
           <input type='submit' value="Let's Go!" />
@@ -36,4 +44,10 @@ class TripForm extends Component {
   }
 }
 
-export default TripForm;
+const mapStateToProps = (state) => {
+    return {
+        planets: state.planets
+    }
+}
+
+export default connect(mapStateToProps)(TripForm);

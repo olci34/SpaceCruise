@@ -20,12 +20,11 @@ class UserForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-        debugger
       this.props.signIn(this.state.name)
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state); // TODO: Authenticate User
-      this.props.history.push("/trips"); // navigates us to /planets
     }
+    this.props.history.push("/trips"); // navigates us to /planets
   };
 
   render() {

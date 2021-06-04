@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     end
 
     def sign_in
-
+        user = User.find_by(name: params[:username])
+        render json: user
     end
 
     def user_params

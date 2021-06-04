@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :trips
   resources :users
 
-  get 'sign_in' to: 'users#sign_in'
+  post 'signin', to: 'users#sign_in'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

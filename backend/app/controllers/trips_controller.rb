@@ -9,6 +9,10 @@ class TripsController < ApplicationController
         render json: trip
     end
 
+    def update
+        binding.pry
+    end
+
     def destroy
         trip = Trip.find_by(id: params[:id])
         trip.destroy

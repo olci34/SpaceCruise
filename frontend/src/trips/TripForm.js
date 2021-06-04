@@ -5,6 +5,7 @@ import fetchPlanets from "../actions/fetchPlanets";
 import { withRouter } from "react-router";
 
 class TripForm extends Component {
+
   state = {
     planets: [],
   };
@@ -32,16 +33,20 @@ class TripForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    debugger
     const visitingPlanetIds = this.state.planets
       .filter((p) => p.checked === true)
       .map((p) => p.id);
+    if (!!this.props.trip) {
     this.props.postTrip({
       departure: "10 Jan 2023",
       user_id: 1,
       planet_ids: visitingPlanetIds,
     });
     this.props.history.push("/trips");
+  } else if (!!this.props.trip) {
+    this.props.editTrip(this.props.trip)
+  }
   };
 
   handleChange = (e) => {
@@ -80,5 +85,5 @@ const mapStateToProps = (state) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, { fetchPlanets, postTrip })(TripForm)
+  connect(mapStateToProps, { fetchPlanets, postTrip, editTrip })(TripForm)
 );

@@ -5,6 +5,7 @@ import TripForm from "./TripForm";
 import Trips from "./Trips";
 import {Route, Switch} from 'react-router-dom'
 import Trip from './Trip'
+
 class TripsContainer extends Component {
 
   componentDidMount() {

@@ -1,10 +1,10 @@
 export default function appReducer(state, action) {
   switch (action.type) {
     case "ADD_USER":
-      return { ...state, user: {id: action.payload.id, name: action.payload.name, password: action.payload.password } }; // CHECK IF password IS NECESSARY
+      return { ...state, user: {id: action.payload.id, name: action.payload.name } };
     case "SIGN_IN":
-      // ERROR HANDLING
-      return { ...state, user: {id: action.payload.id, name: action.payload.name, password: action.payload.password } };
+      // TODO: ERROR HANDLING
+      return { ...state, user: {id: action.payload.id, name: action.payload.name } };
     case "FETCH_PLANETS":
       return { ...state, planets: action.payload };
     case "FETCH_TRIPS":

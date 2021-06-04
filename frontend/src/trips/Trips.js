@@ -3,6 +3,7 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 
 function Trips(props) {
+    
     return (
         <div className='trips-list'>
             <ul>
@@ -13,7 +14,7 @@ function Trips(props) {
     )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {   // could be done with useSelector() hook
     return {
         trips: [...state.trips]
     }

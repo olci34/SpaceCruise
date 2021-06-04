@@ -7,6 +7,7 @@ import editTrip from '../actions/editTrip'
 class TripForm extends Component {
 
   state = {
+    departure: '',
     planets: [],
   };
 
@@ -39,13 +40,13 @@ class TripForm extends Component {
       .map((p) => p.id);
     if (this.props.trip === undefined) {
     this.props.postTrip({ 
-      departure: "10 Jan 2023", // TODO: Fix this after adding a calendar to the form
+      departure: e.target.children[0].value, // TODO: Fix this after adding a calendar to the form
       user_id: this.props.user.id,
       planet_ids: visitingPlanetIds,
     });
     this.props.history.push("/trips");
   } else if (!!this.props.trip) {
-    this.props.editTrip({...this.props.trip, planet_ids: visitingPlanetIds})
+    this.props.editTrip({...this.props.trip, planet_ids: visitingPlanetIds, departure: e.target.children[0].value})
     this.props.history.push(`/trips/${this.props.trip.id}`)
   }
   };
@@ -61,6 +62,7 @@ class TripForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}> {/* TODO: Add Calendar to pick a departure date */}
+      <input type="date" id="start" name="trip-start"/>
         {this.state.planets.map((p) => (
           <label key={p.id}>
             {p.name}

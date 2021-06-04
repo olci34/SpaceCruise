@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import addUser from "../actions/addUser";
 import { withRouter } from "react-router-dom";
+import signIn from '../actions/signIn'
 
 class UserForm extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class UserForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-      // action signIn
+        debugger
+      this.props.signIn(this.state.name)
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state); // TODO: Authenticate User
       this.props.history.push("/trips"); // navigates us to /planets
@@ -49,4 +51,4 @@ class UserForm extends Component {
   }
 }
 
-export default withRouter(connect(null, { addUser })(UserForm));
+export default withRouter(connect(null, { signIn, addUser })(UserForm));

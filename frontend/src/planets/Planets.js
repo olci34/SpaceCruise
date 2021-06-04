@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Planets extends Component {
 
     render() {
         return (
             <ul>
-                {this.props.planets.map(p => <li>{p.name}</li>)}
+                {this.props.planets.map(p => <li key={p.id}><Link to={`/planets/${p.id}`}>{p.name}</Link></li>)}
             </ul>
         )
     }

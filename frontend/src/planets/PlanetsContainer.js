@@ -3,6 +3,8 @@ import fetchPlanets from "../actions/fetchPlanets";
 import React, { Component } from "react";
 import Planets from "./Planets";
 import NavBar from "../NavBar";
+import { Route, Switch } from "react-router";
+import Planet from './Planet'
 
 class PlanetsContainer extends Component {
   componentDidMount() {
@@ -13,7 +15,15 @@ class PlanetsContainer extends Component {
     return (
       <>
         <NavBar />
-        <Planets />
+        <Switch>
+          <Route exact path='/planets'>
+          <Planets />
+          </Route>
+          <Route path='/planets/:id'>
+            <Planet />
+          </Route>
+        </Switch>
+        
       </>
     );
   }

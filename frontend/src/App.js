@@ -12,7 +12,7 @@ function App(props) {
           <Greeting />
           <UserForm />
         </Route>
-        <Route exact path="/trips">
+        <Route path="/trips">
           <TripsContainer />
         </Route>
       </Switch>

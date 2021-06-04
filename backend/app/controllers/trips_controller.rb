@@ -9,6 +9,10 @@ class TripsController < ApplicationController
         render json: trip
     end
 
+    def show
+        binding.pry
+    end
+
     def trip_params
         params.require(:trip).permit(:departure, :user_id, planet_ids: [])
     end

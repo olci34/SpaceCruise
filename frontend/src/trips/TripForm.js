@@ -1,14 +1,27 @@
 import React, { Component } from "react";
-import postTrip from '../actions/postTrip'
+import postTrip from "../actions/postTrip";
 import { connect } from "react-redux";
+import fetchPlanets from "../actions/fetchPlanets";
+import { withRouter } from "react-router";
 
 class TripForm extends Component {
-
   state = {
     planets: [],
   };
 
-  componentDidUpdate(prevProps) {
+  componentDidMount() {
+    if (this.props.planets.length === 0) {
+    this.props.fetchPlanets();
+    } else { // No Need to fetch again if we stored before !
+      this.setState({
+        planets: this.props.planets.map((p) =>
+          Object.assign({}, p, { checked: false })
+        ),
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps) { // STUDY WHY !!!
     if (prevProps.planets.length === 0) {
       this.setState({
         planets: this.props.planets.map((p) =>
@@ -20,11 +33,15 @@ class TripForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const visitingPlanetIds = this.state.planets.filter(p => p.checked === true).map(p => p.id)
-    this.props.postTrip({departure: '10 Jan 2023', user_id: 1, planet_ids: visitingPlanetIds})
-    const unchecked = this.state.planets
-    unchecked.map(p => p.checked = false)
-    this.setState({planets: unchecked})
+    const visitingPlanetIds = this.state.planets
+      .filter((p) => p.checked === true)
+      .map((p) => p.id);
+    this.props.postTrip({
+      departure: "10 Jan 2023",
+      user_id: 1,
+      planet_ids: visitingPlanetIds,
+    });
+    this.props.history.push("/trips");
   };
 
   handleChange = (e) => {
@@ -32,11 +49,10 @@ class TripForm extends Component {
     newPlanets.map((p) =>
       p.name === e.target.name ? (p.checked = e.target.checked) : p
     );
-    this.setState({planets: newPlanets });
+    this.setState({ planets: newPlanets });
   };
 
   render() {
-    console.log('render')
     return (
       <form onSubmit={this.handleSubmit}>
         {this.state.planets.map((p) => (
@@ -63,4 +79,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {postTrip})(TripForm);
+export default withRouter(
+  connect(mapStateToProps, { fetchPlanets, postTrip })(TripForm)
+);

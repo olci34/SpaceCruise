@@ -9,7 +9,7 @@ class TripsController < ApplicationController
         render json: trip
     end
 
-    def show
+    def destoy
         binding.pry
     end
 

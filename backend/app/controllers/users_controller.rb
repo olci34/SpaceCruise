@@ -15,8 +15,14 @@ class UsersController < ApplicationController
     end
 
     def sign_in
-        user = User.find_by(name: params[:username])
-        render json: user
+        user = User.find_by(name: params[:user][:name])
+        if user && user.authenticate(params[:user][:password])
+            render json: user
+        elsif user
+            render json: {error: 'Wrong password baby girl'}
+        else
+            render json: {error: 'Wrong username dude'}
+        end
     end
 
     def user_params

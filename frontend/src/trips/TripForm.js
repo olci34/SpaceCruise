@@ -14,7 +14,6 @@ class TripForm extends Component {
     if (this.props.planets.length === 0) {
     this.props.fetchPlanets();
     } else { // No Need to fetch again if we stored before !
-      debugger
       this.setState({
         planets: this.props.planets.map((p) =>
           Object.assign({}, p, { checked: false })
@@ -39,7 +38,6 @@ class TripForm extends Component {
       .filter((p) => p.checked === true)
       .map((p) => p.id);
     if (this.props.trip === undefined) {
-      debugger
     this.props.postTrip({ 
       departure: "10 Jan 2023", // TODO: Fix this after adding a calendar to the form
       user_id: this.props.user.id,

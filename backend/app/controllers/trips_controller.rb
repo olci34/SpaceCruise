@@ -10,7 +10,9 @@ class TripsController < ApplicationController
     end
 
     def update
-        binding.pry
+        trip = Trip.find_by(id: params[:id])
+        trip.update(trip_params)
+        render json: trip
     end
 
     def destroy

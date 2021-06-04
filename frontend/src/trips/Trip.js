@@ -9,7 +9,6 @@ export default function Trip() {
   const params = useParams();
   const history = useHistory();
   const trip = trips.find((t) => t.id === parseInt(params["id"], 10));
-
   const handleCancelTrip = (e) => {
     dispatch(cancelTrip(trip));
     history.push("/trips");

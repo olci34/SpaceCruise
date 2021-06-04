@@ -33,7 +33,7 @@ class TripForm extends Component {
   }
 
   handleSubmit = (e) => {
-    debugger
+    e.preventDefault()
     const visitingPlanetIds = this.state.planets
       .filter((p) => p.checked === true)
       .map((p) => p.id);
@@ -45,7 +45,7 @@ class TripForm extends Component {
     });
     this.props.history.push("/trips");
   } else if (!!this.props.trip) {
-    this.props.editTrip(this.props.trip)
+    this.props.editTrip({...this.props.trip, planet_ids: visitingPlanetIds})
     this.props.history.push(`/trips/${this.props.trip.id}`)
   }
   };

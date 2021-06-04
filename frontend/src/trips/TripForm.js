@@ -3,7 +3,7 @@ import postTrip from "../actions/postTrip";
 import { connect } from "react-redux";
 import fetchPlanets from "../actions/fetchPlanets";
 import { withRouter } from "react-router";
-
+import editTrip from '../actions/editTrip'
 class TripForm extends Component {
 
   state = {
@@ -37,7 +37,7 @@ class TripForm extends Component {
     const visitingPlanetIds = this.state.planets
       .filter((p) => p.checked === true)
       .map((p) => p.id);
-    if (!!this.props.trip) {
+    if (this.props.trip === undefined) {
     this.props.postTrip({
       departure: "10 Jan 2023",
       user_id: 1,
@@ -46,6 +46,7 @@ class TripForm extends Component {
     this.props.history.push("/trips");
   } else if (!!this.props.trip) {
     this.props.editTrip(this.props.trip)
+    this.props.history.push(`/trips/${this.props.trip.id}`)
   }
   };
 

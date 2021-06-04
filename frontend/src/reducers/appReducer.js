@@ -10,6 +10,9 @@ export default function appReducer(state, action) {
       return {...state, trips: [...state.trips, action.payload]}
     case "CANCEL_TRIP":
       return {...state, trips: [...state.trips.filter(t => t.id !== action.payload) ]}
+    case "EDIT_TRIP":
+      debugger
+      return {...state, trips: [state.trips.map(t => t.id === action.payload.id ? action.payload : t)]}
     default:
       return state;
   }

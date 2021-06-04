@@ -1,6 +1,6 @@
 export default function editTrip(trip) {
   return (dispatch) => {
-    configTrip = {
+    const configTrip = {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -10,6 +10,6 @@ export default function editTrip(trip) {
     };
     fetch(`http://localhost:3001/trips/${trip.id}`, configTrip)
       .then((resp) => resp.json())
-      .then((trip) => dispatch({ type: "EDIT_TRIP", payload: trip.id }));
+      .then((trip) => dispatch({ type: "EDIT_TRIP", payload: trip}));
   };
 }

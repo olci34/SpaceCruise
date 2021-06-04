@@ -1,7 +1,8 @@
 export default function appReducer(state, action) {
   switch (action.type) {
     case "ADD_USER":
-      return { ...state, user: { name: action.payload } };
+      debugger
+      return { ...state, user: { name: action.payload.name, password: action.payload.password } };
     case "FETCH_PLANETS":
       return { ...state, planets: action.payload };
     case "FETCH_TRIPS":

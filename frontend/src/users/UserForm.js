@@ -8,7 +8,8 @@ class UserForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: ''
+            name: '',
+            password: ''
         }
     }
 
@@ -18,7 +19,7 @@ class UserForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addUser(this.state)
+        this.props.addUser(this.state) // TODO: Authenticate User
         this.props.history.push('/trips') // navigates us to /planets
     }
 
@@ -29,7 +30,7 @@ class UserForm extends Component {
                 <input type='text' onChange={this.handleChange} value={this.state.name} name='name'/>
                 <br/>
                 <label>Password:</label>
-                <input type='text' name='password'/>
+                <input type='text'onChange={this.handleChange} name='password'/>
                 <br/>
                 <input type='submit' value='Sign Up'/>
             </form>
@@ -37,9 +38,4 @@ class UserForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addUser: (user) => dispatch(addUser(user))
-    }
-}
-export default withRouter(connect(null,mapDispatchToProps)(UserForm))
+export default withRouter(connect(null,{addUser})(UserForm))

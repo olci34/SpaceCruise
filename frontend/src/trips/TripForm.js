@@ -38,8 +38,8 @@ class TripForm extends Component {
       .filter((p) => p.checked === true)
       .map((p) => p.id);
     if (this.props.trip === undefined) {
-    this.props.postTrip({
-      departure: "10 Jan 2023",
+    this.props.postTrip({ 
+      departure: "10 Jan 2023", // TODO: Fix this after adding a calendar to the form
       user_id: 1,
       planet_ids: visitingPlanetIds,
     });
@@ -60,7 +60,7 @@ class TripForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}> {/* TODO: Add Calendar to pick a departure date */}
         {this.state.planets.map((p) => (
           <label key={p.id}>
             {p.name}
@@ -81,7 +81,8 @@ class TripForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    planets: state.planets,
+    user: state.user,
+    planets: state.planets
   };
 };
 

@@ -8,6 +8,8 @@ export default function appReducer(state, action) {
       return { ...state, trips: action.payload };
     case "POST_TRIP":
       return {...state, trips: [...state.trips, action.payload]}
+    case "CANCEL_TRIP":
+      return {...state, trips: [...state.trips.filter(t => t.id !== action.payload) ]}
     default:
       return state;
   }

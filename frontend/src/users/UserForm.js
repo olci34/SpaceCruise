@@ -22,9 +22,9 @@ class UserForm extends Component {
     if (this.props.serve === "Sign In") {
       this.props.signIn(this.state)
     } else if (this.props.serve === "Sign Up") {
-      this.props.addUser(this.state); // TODO: Authenticate User
+      this.props.addUser(this.state);
     }
-    this.props.history.push("/trips"); // navigates us to /planets
+    this.props.history.push("/trips"); // TODO: ACCESS STORE STATE, THEN CHECK IF ERRORS EMPTY, IF EMPTY PUSH TO '/trips', IF NOT ALERTS WITH ERRORS
   };
 
   render() {

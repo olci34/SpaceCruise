@@ -5,6 +5,7 @@ import TripForm from "./TripForm";
 import Trips from "./Trips";
 import {Route, Switch} from 'react-router-dom'
 import Trip from './Trip'
+import NavBar from "../NavBar";
 
 class TripsContainer extends Component {
 
@@ -15,6 +16,7 @@ class TripsContainer extends Component {
   render() {
     return (
       <>
+        <NavBar />
         <Switch>
           <Route path='/trips/new'> {/*  /trips/new path has to be above /trips/:id otherwise it takes us to /trips/:id always */}
             <TripForm />

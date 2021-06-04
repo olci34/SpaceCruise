@@ -3,6 +3,7 @@ import Greeting from "./Greeting";
 import UserForm from "./users/UserForm";
 import { Link, Route, Switch } from "react-router-dom";
 import TripsContainer from "./trips/TripsContainer";
+import PlanetsContainer from "./planets/PlanetsContainer"
 
 function App(props) {
   return (
@@ -18,6 +19,9 @@ function App(props) {
         </Route>
         <Route path="/trips">
           <TripsContainer />
+        </Route>
+        <Route path="/planets">
+          <PlanetsContainer />
         </Route>
       </Switch>
     </>

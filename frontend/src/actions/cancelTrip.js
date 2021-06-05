@@ -9,6 +9,6 @@ export default function cancelTrip(trip) {
     };
     fetch(`http://localhost:3001/trips/${trip.id}`, configTrip)
       .then((resp) => resp.json())
-      .then(trip => dispatch({ type: "CANCEL_TRIP", payload: trip.id }))
-    }
+      .then((trip) => dispatch({ type: "CANCEL_TRIP", payload: trip.id }));
+  };
 }

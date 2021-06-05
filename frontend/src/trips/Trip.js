@@ -31,8 +31,8 @@ export default function Trip() {
           </button>
         </div>
       </Route>
-      <Route exact path='/trips/:id/edit'>
-          <TripForm trip={trip} />
+      <Route exact path="/trips/:id/edit">
+        <TripForm trip={trip} />
       </Route>
     </Switch>
   );

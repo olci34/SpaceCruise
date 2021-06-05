@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import addUser from "../actions/addUser";
 import { withRouter } from "react-router-dom";
-import signIn from '../actions/signIn'
+import signIn from "../actions/signIn";
 
 class UserForm extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class UserForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-      this.props.signIn(this.state)
+      this.props.signIn(this.state);
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state);
     }
@@ -29,7 +29,7 @@ class UserForm extends Component {
 
   render() {
     return (
-      <div className={`${this.props.serve}-div`}>
+      <div className="user-form">
         <h1>{this.props.serve}</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Name:</label>

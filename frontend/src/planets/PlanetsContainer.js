@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Planets from "./Planets";
 import NavBar from "../NavBar";
 import { Route, Switch } from "react-router";
-import Planet from './Planet'
+import Planet from "./Planet";
 
 class PlanetsContainer extends Component {
   componentDidMount() {
@@ -16,14 +16,13 @@ class PlanetsContainer extends Component {
       <>
         <NavBar />
         <Switch>
-          <Route exact path='/planets'>
-          <Planets />
+          <Route exact path="/planets">
+            <Planets />
           </Route>
-          <Route path='/planets/:id'>
+          <Route path="/planets/:id">
             <Planet />
           </Route>
         </Switch>
-        
       </>
     );
   }

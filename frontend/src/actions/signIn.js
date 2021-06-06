@@ -10,8 +10,9 @@ export default function signIn(sentUser) {
     };
     fetch("http://localhost:3001/signin", configUser)
       .then((resp) => resp.json())
-      .then((receivedUser) =>
+      .then((receivedUser) => {
+        
         dispatch({ type: "SIGN_IN", payload: receivedUser })
-      );
+      });
   };
 }

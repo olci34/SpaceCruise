@@ -10,7 +10,7 @@ export default function NavBar() {
       payload: {
         zoomInPositions: [-0.2, 0, 1.2],
         errors: [],
-        user: { name: "", password: "" },
+        user: { id: "", name: "" },
         planets: [],
         trips: [],
       },

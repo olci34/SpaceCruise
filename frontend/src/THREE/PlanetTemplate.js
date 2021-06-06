@@ -1,5 +1,4 @@
 import React from "react";
-import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useTexture } from '@react-three/drei'
 function PlanetTemplate(props) {

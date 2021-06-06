@@ -14,8 +14,8 @@ const initialState = {
   zoomInPositions: [-0.2, 0, 1.2],
   errors: [],
   user: {
+    id: `${localStorage.getItem('userId')}`,
     name: "",
-    password: "",
   },
   planets: [],
   trips: [],

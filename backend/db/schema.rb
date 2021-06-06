@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_164024) do
 
   create_table "planets", force: :cascade do |t|
     t.string "position"
+    t.string "description"
     t.string "name"
   end
 

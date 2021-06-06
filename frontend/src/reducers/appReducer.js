@@ -35,7 +35,6 @@ export default function appReducer(state, action) {
       };
     case "LOG_OUT":
       localStorage.clear()
-      debugger
       return { ...action.payload };
     case "ZOOM":
       return {

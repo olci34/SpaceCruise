@@ -50,7 +50,8 @@ canvas {
 
 .trips-list {
     position: fixed;
-    
+    top: 30%;
+    text-align: center;
 }
 
 a {
@@ -69,3 +70,47 @@ label {
     display: block;
 }
 
+#welcome-header {
+    padding-bottom: 40px;
+}
+
+p {
+    padding-bottom: 8px;
+}
+
+#new-trip-button {
+    margin-top: 15px;
+    width: 100px;
+}
+
+.planets-list {
+    position: fixed;
+    top: 25%;
+}
+.zoomed-planet h1{
+    position: fixed;
+    left: 10%;
+    top: 45%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.767);
+    border-radius: 20px;
+}
+
+.zoomed-planet p {
+    position: fixed;
+    padding: 15px;
+    top: 30%;
+    right: 5%;
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0.767);
+    border-radius: 20px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.appear {
+    opacity: 1;
+    transition: opacity 3s ease;
+}

@@ -72,7 +72,6 @@ class TripForm extends Component {
           <input type="date" id="start" name="trip-start" />
           {this.state.planets.map((p) => (
             <label key={p.id}>
-              {p.name}
               <input
                 type="checkbox"
                 onChange={this.handleChange}
@@ -80,6 +79,7 @@ class TripForm extends Component {
                 name={p.name}
                 checked={p.checked}
               />
+              {p.name}
             </label>
           ))}
           <input type="submit" value="Let's Go!" />

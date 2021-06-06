@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const initialState = {
+  stage: 'Intro',
   zoomInPositions: [-0.2, 0, 1.2],
   errors: [],
   user: {

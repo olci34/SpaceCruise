@@ -19,25 +19,11 @@ import Uranus from "./THREE/Uranus";
 import Neptune from "./THREE/Neptune";
 import Pluto from "./THREE/Pluto";
 import { useSelector } from "react-redux";
+import ZoomIn from "./THREE/ZoomIn";
 
-
-function ZoomIn(props) {
-
-  const vec = new THREE.Vector3(props.positions[0], props.positions[1], props.positions[2])
-  let t = 0
-  const vec2 = new THREE.Vector3(props.positions[0], props.positions[1]+3, props.positions[2]+30)
-  return useFrame(({ camera }) => {
-    camera.rotation.y = -9 * Math.PI / 180
-    if (t < 10) {
-      camera.position.lerp(vec2, 0.03)
-       t+=0.1
-    } else {
-      camera.position.lerp(vec, 0.01)
-    }
-    })
-}
 function App() {
-  const positions = useSelector(state => state.zoomInPositions)
+  const positions = useSelector((state) => state.zoomInPositions);
+  const stage = useSelector((state) => state.stage);
   return (
     <>
       <Canvas camera={{ position: [160, 10, -160] }}>
@@ -61,7 +47,7 @@ function App() {
           <Neptune />
           <Pluto />
         </Suspense>
-        <ZoomIn positions={positions}/>
+        <ZoomIn positions={positions} stage={stage} />
       </Canvas>
       <Loader />
       <div className="app">

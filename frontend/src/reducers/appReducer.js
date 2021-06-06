@@ -33,8 +33,12 @@ export default function appReducer(state, action) {
       };
     case "LOG_OUT":
       return { ...action.payload };
-      case "ZOOM":
-      return {...state, zoomInPositions: action.payload}
+    case "ZOOM":
+      return {
+        ...state,
+        stage: action.payload[0],
+        zoomInPositions: action.payload[1],
+      };
     default:
       return state;
   }

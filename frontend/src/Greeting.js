@@ -6,6 +6,7 @@ export default function Greeting() {
     <div id="greeting">
       <h1>Greeting</h1>
       <UserForm serve="Sign In" />
+      <br/>
       <Link to="/signup">Sign Up</Link>
     </div>
   );

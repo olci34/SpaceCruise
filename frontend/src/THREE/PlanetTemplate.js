@@ -1,14 +1,10 @@
 import React from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-
+import { useTexture } from '@react-three/drei'
 function PlanetTemplate(props) {
   useFrame(props.frameCallback);
-
-  const textureLoader = new THREE.TextureLoader();
-  const [map, normal, displacement] = props.maps.map((map) =>
-    textureLoader.load(map)
-  );
+  const [map, normal, displacement] = useTexture(props.maps)
   
   return (
     <mesh ref={props.mesh} position={props.positions}>

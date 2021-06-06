@@ -8,7 +8,7 @@ export default function NavBar() {
     dispatch({
       type: "LOG_OUT",
       payload: {
-        cameraPosition: [0,0,2],
+        zoomInPositions: [-0.2, 0, 1.2],
         errors: [],
         user: { name: "", password: "" },
         planets: [],

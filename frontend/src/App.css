@@ -61,8 +61,11 @@ a {
     text-shadow: 2px 2px 8px yellow;
 }
 
-
 li {
     padding: 10px;
+}
+
+label {
+    display: block;
 }
 

@@ -7,7 +7,7 @@ export default function Planet() {
   const planet = planets.find((p) => p.id === parseInt(params["id"], 10));
 
   return (
-    <div className="planet">
+    <div id={planet.name} >
       <strong>{planet.name}</strong>
     </div>
   );

@@ -33,6 +33,7 @@ class UserForm extends Component {
         <h1>{this.props.serve}</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Name:</label>
+          <br/>
           <input
             type="text"
             onChange={this.handleChange}
@@ -41,6 +42,7 @@ class UserForm extends Component {
           />
           <br />
           <label>Password:</label>
+          <br/>
           <input type="text" onChange={this.handleChange} name="password" />
           <br />
           <input type="submit" value={this.props.serve} />

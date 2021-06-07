@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import mercurynormalmap from "../textures/mercurynormal.png";
-import mercurymap from "../textures/mercury.png";
-import displacementmap from "../textures/mercurydisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Mercury() {
@@ -14,7 +11,7 @@ function Mercury() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[mercurymap, mercurynormalmap, displacementmap]}
+      maps={['https://i.postimg.cc/Y9nhmRQ5/mercury.png', 'https://i.postimg.cc/gj1jg0S4/mercurynormal.png', 'https://i.postimg.cc/d3hDRCBL/mercurydisplacement.png']}
       dScale={0.1}
       positions={[-4, 0, 0]}
       sphereArgs={[0.22, 64, 64]}

@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import map from "../textures/uranus.jpg";
-import normalmap from "../textures/uranusnormal.png";
-import displacementmap from "../textures/uranusdisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Uranus() {
@@ -14,7 +11,7 @@ function Uranus() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[map, normalmap, displacementmap]}
+      maps={['https://i.postimg.cc/t4JZpLPh/uranus.jpg', 'https://i.postimg.cc/k43BNGHc/uranusnormal.png', 'https://i.postimg.cc/pdnmnzsr/uranusdisplacement.png']}
       dScale={0.1}
       positions={[35, 0, 0]}
       sphereArgs={[2.1, 64, 64]}

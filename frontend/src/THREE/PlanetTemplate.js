@@ -10,7 +10,7 @@ function PlanetTemplate(props) {
       <sphereBufferGeometry attach="geometry" args={props.sphereArgs} />
       <meshStandardMaterial
         attach="material"
-        color="white"
+        // color="white"
         normalMap={normal}
         map={map}
         displacementMap={displacement}

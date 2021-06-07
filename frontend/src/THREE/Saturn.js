@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import map from "../textures/saturn.jpg";
-import normalmap from "../textures/saturnnormal.png";
-import displacementmap from "../textures/saturndisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Jupiter() {
@@ -14,7 +11,7 @@ function Jupiter() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[map, normalmap, displacementmap]}
+      maps={['https://i.postimg.cc/yxh93cYc/saturn.jpg', 'https://i.postimg.cc/RC1nR14n/saturnnormal.png', 'https://i.postimg.cc/Cxr88FYP/saturndisplacement.png']}
       dScale={0.3}
       positions={[26, 0, 0]}
       sphereArgs={[3, 64, 64]}

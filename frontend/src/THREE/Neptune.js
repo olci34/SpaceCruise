@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import map from "../textures/neptune.jpg";
-import normalmap from "../textures/neptunenormal.png";
-import displacementmap from "../textures/neptunedisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Neptune() {
@@ -14,7 +11,7 @@ function Neptune() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[map, normalmap, displacementmap]}
+      maps={['https://i.postimg.cc/L4QxHMgT/neptune.jpg', 'https://i.postimg.cc/mgY3FxkK/neptunenormal.png', 'https://i.postimg.cc/gj1y3mvb/neptunedisplacement.png']}
       dScale={0.1}
       positions={[43, 0, 0]}
       sphereArgs={[2.1, 64, 64]}

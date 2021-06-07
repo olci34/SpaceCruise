@@ -19,9 +19,9 @@ class UsersController < ApplicationController
         if user && user.authenticate(params[:user][:password])
             render json: user
         elsif user
-            render json: {errors: 'Wrong password baby girl'}
+            render json: {errors: 'Wrong password'}
         else
-            render json: {errors: 'Wrong username dude'}
+            render json: {errors: 'Wrong username'}
         end
     end
 

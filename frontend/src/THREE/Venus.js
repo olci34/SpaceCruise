@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import venusmap from "../textures/venus.jpg";
-import venusnormalmap from "../textures/venusnormal.png";
-import displacementmap from "../textures/venusdisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Venus() {
@@ -14,7 +11,7 @@ function Venus() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[venusmap, venusnormalmap, displacementmap]}
+      maps={['https://i.postimg.cc/VsFdMYWq/venus.jpg', 'https://i.postimg.cc/YSgSSkSm/venusnormal.png', 'https://i.postimg.cc/jSD5Gy0c/venusdisplacement.png']}
       dScale={0.05}
       positions={[-2, 0, 0]}
       sphereArgs={[0.47, 64, 64]}

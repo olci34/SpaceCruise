@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import marsnormalmap from "../textures/marsnormalmap.png";
-import marsmap from "../textures/marsmap.png";
-import displacementmap from "../textures/marsdisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Mars() {
@@ -14,7 +11,7 @@ function Mars() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[marsmap, marsnormalmap, displacementmap]}
+      maps={['https://i.postimg.cc/V6RXZXng/marsmap.png', 'https://i.postimg.cc/3RKvGWVv/marsnormalmap.png', 'https://i.postimg.cc/YSF3R4dD/marsdisplacement.png']}
       dScale={0.1}
       positions={[4, 0, 0]}
       sphereArgs={[0.3, 64, 64]}

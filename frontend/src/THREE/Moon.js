@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import displacementmap from "../textures/moondisplacementmap.png";
-import moonmap from "../textures/moonmap.jpg";
-import normalmap from "../textures/moonnormalmap.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Moon() {
@@ -17,7 +14,7 @@ function Moon() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[moonmap, normalmap, displacementmap]}
+      maps={['https://i.postimg.cc/QMcztnZM/moonmap.jpg', 'https://i.postimg.cc/SQgvJM3c/moonnormalmap.png', 'https://i.postimg.cc/X7h1g0VJ/moondisplacementmap.png']}
       dScale={0.02}
       positions={[0.4, 0, 0.3]}
       sphereArgs={[0.007, 64, 64]}

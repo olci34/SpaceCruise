@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import earthnormalmap from "../textures/earthnormalmap.png";
-import earthdaymap from "../textures/earthdaymap.jpg";
-import displacementmap from "../textures/displacementmap.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Earth() {
@@ -14,7 +11,7 @@ function Earth() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[earthdaymap, earthnormalmap, displacementmap]}
+      maps={['https://live.staticflickr.com/2521/3884071286_edb50f8137_b.jpg', 'https://i.postimg.cc/yxk3fcvM/earthnormalmap.png', 'https://i.postimg.cc/j27kJ8G2/displacementmap.png']}
       dScale={0.1}
       positions={[0, 0, 0]}
       sphereArgs={[0.5, 64, 64]}

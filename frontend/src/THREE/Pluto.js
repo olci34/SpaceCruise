@@ -1,7 +1,4 @@
 import React, { useRef } from "react";
-import map from "../textures/pluto.jpg";
-import normalmap from "../textures/plutonormal.png";
-import displacementmap from "../textures/plutodisplacement.png";
 import PlanetTemplate from "./PlanetTemplate";
 
 function Jupiter() {
@@ -14,10 +11,10 @@ function Jupiter() {
     <PlanetTemplate
       mesh={mesh}
       frameCallback={frameCallback}
-      maps={[map, normalmap, displacementmap]}
-      dScale={0.3}
+      maps={['https://i.postimg.cc/qq6yJSWb/pluto.jpg', 'https://i.postimg.cc/tChDFnmr/plutonormal.png', 'https://i.postimg.cc/7hz9s5PZ/plutodisplacement.png']}
+      dScale={0.1}
       positions={[52, 0, 0]}
-      sphereArgs={[0.1, 64, 64]}
+      sphereArgs={[0.3, 64, 64]}
     />
   );
 }

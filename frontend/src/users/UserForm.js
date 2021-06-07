@@ -20,11 +20,11 @@ class UserForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-      this.props.signIn(this.state);
+      this.props.signIn(this.state); // ASK HOW TO WAIT FOR THIS FETCH CALL
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state);
     }
-    this.props.history.push("/trips"); // TODO: ACCESS STORE STATE, THEN CHECK IF ERRORS EMPTY, IF EMPTY PUSH TO '/trips', IF NOT ALERTS WITH ERRORS
+    this.props.history.push("/trips");
   };
 
   render() {

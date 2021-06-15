@@ -8,4 +8,4 @@ After signing in or signing up, Planets section on navigation bar will take you 
 
 #### You can experience in [here!](https://olci34.github.io/wherever/) (Note: Please do not use your real email or password you use for your real accounts)
 
-![Space Cruise SPA](https://media.giphy.com/media/kEPOig0tzOT509Al3I/giphy.gif)
+![Space Cruise SPA](https://media.giphy.com/media/kEPOig0tzOT509Al3I/giphy-downsized.gif)

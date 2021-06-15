@@ -29,3 +29,21 @@ class PlanetsContainer extends Component {
 }
 
 export default connect(null, { fetchPlanets })(PlanetsContainer);
+
+// export default function PlanetsContainer() {
+//   const dispatch = useDispatch()
+//   useEffect(() => dispatch(fetchPlanets()))
+//   return(
+//     <>
+//         <NavBar />
+//         <Switch>
+//           <Route exact path="/planets">
+//             <Planets />
+//           </Route>
+//           <Route path="/planets/:id">
+//             <Planet />
+//           </Route>
+//         </Switch>
+//       </>
+//   )
+// }

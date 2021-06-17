@@ -1,6 +1,6 @@
 # Space Cruise
   
-An interplanetary space travel application that aloows users to book trips to planets in Solar System. 
+An interplanetary space travel application that allows users to book trips to planets in Solar System. 
 
 ## Usage 
   
